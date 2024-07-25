@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2029E0B4-CBEB-4C95-A0A0-54A3371F970A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bao.Spider.Dal</RootNamespace>
+    <AssemblyName>Bao.Spider.Dal</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NPoco, Version=3.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPoco.3.9.4\lib\net45\NPoco.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseDal.cs" />
+    <Compile Include="BrandDal.cs" />
+    <Compile Include="CategoryBrandMappingDal.cs" />
+    <Compile Include="ApiLogDal.cs" />
+    <Compile Include="CategoryDal.cs" />
+    <Compile Include="DemoDal.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\ApiLog.cs" />
+    <Compile Include="Models\CategoryBrandMapping.cs" />
+    <Compile Include="Models\Demo.cs" />
+    <Compile Include="Models\Param.cs" />
+    <Compile Include="Models\ParamCategory.cs" />
+    <Compile Include="Models\ParamInfo.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductParamMapping.cs" />
+    <Compile Include="Models\ProductPic.cs" />
+    <Compile Include="Models\Website.cs" />
+    <Compile Include="ParamCategoryDal.cs" />
+    <Compile Include="ParamDal.cs" />
+    <Compile Include="ParamInfoDal.cs" />
+    <Compile Include="ProductDal.cs" />
+    <Compile Include="ProductParamMappingDal.cs" />
+    <Compile Include="ProductPicDal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Products\CategoryModel.cs" />
+    <Compile Include="ViewModels\Products\ParamModel.cs" />
+    <Compile Include="ViewModels\Products\ProductModel.cs" />
+    <Compile Include="ViewModels\Products\QueryModel.cs" />
+    <Compile Include="WebsiteDal.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bao.Spider.Data\Bao.Spider.Data.csproj">
+      <Project>{2c4d3361-aa2f-4817-a2b9-2ef1fb1ad471}</Project>
+      <Name>Bao.Spider.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
